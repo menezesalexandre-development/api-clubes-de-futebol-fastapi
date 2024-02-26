@@ -5,14 +5,15 @@ import mysql.connector
 app = FastAPI()
 
 db = mysql.connector.connect(
-    host = 'monorail.proxy.rlwy.net',
-    port = 26677,
-    user = 'root',
-    password = 'FbFce1-A2gFDg1BD25EC36DhahBC1c6-',
-    database = 'railway'
+    host='monorail.proxy.rlwy.net',
+    port=26677,
+    user='root',
+    password='FbFce1-A2gFDg1BD25EC36DhahBC1c6-',
+    database='railway'
 )
 
 cursor = db.cursor()
+
 
 class Time(BaseModel):
     id: int
@@ -21,6 +22,7 @@ class Time(BaseModel):
     uf: str
     estadio: str
     competicao: str
+
 
 @app.get('/times')
 def get_items():
