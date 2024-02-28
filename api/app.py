@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException 
 from pydantic import BaseModel
+from api.key import password
 import mysql.connector
 
 app = FastAPI()
@@ -8,7 +9,7 @@ db = mysql.connector.connect(
     host='monorail.proxy.rlwy.net',
     port=26677,
     user='root',
-    password='FbFce1-A2gFDg1BD25EC36DhahBC1c6-',
+    password=password,
     database='railway'
 )
 
