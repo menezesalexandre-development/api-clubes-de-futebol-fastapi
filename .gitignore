@@ -1,2 +1,2 @@
 .vercel
-api/key/__init__.py
+./api/key/__init__.py
