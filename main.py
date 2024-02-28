@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
+import os
 import uvicorn
-from os import getenv
 
-if __name__ == "__main__":
-    port = int(getenv("PORT", 8000))
-    uvicorn.run("api_clubes:app", port=port, reload=True)
+load_dotenv()
+
+PORT = int(os.getenv('PORT', 8000))
+
+if __name__ == '__main__':
+    uvicorn.run('api.app:app', port=PORT, reload=True)
